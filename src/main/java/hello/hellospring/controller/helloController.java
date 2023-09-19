@@ -10,7 +10,6 @@ public class helloController {
     @GetMapping("hello")    // 웹어플리케이션에서 /hello라고 들어오면 이 메소드를 호출
     public String hello(Model model){   // MVC : Model, View, Controller
         model.addAttribute("data", "hello!");
-        System.out.println("test");
         return "hello";
     }
 }
