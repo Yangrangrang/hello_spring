@@ -19,7 +19,7 @@ class MemberServiceTest {
     // clear해줘야 한다
     // MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository(); // 이렇게 하면 MemberService에 있는 repository와 test에 있는게 다를 수 있다.
 
-    @BeforeEach // 이런식으로 생성자로 만들어야 repository가 동일 하게 사용될수 있다.
+    @BeforeEach // 이런식으로 생성자로 만들어야 repository가 동일 하게 사용될수 있다. 이게 DI 외부에서 주입해주는거
     public void beforeEach(){
         memoryMemberRepository = new MemoryMemberRepository();
         memberService = new MemberService(memoryMemberRepository);
