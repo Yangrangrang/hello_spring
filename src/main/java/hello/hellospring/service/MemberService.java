@@ -11,7 +11,12 @@ import java.util.Optional;
 // repository는 조금 단순하게 개발적으로 명명
 public class MemberService {
 
-    private final MemberRepository memeberRepository = new MemoryMemberRepository();
+    // private final MemberRepository memeberRepository = new MemoryMemberRepository();
+    private final MemberRepository memeberRepository;
+
+    public MemberService(MemberRepository memeberRepository) {
+        this.memeberRepository = memeberRepository;
+    };
 
     /*
      * 회원가입
