@@ -3,17 +3,22 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 // service의 네이밍은 비즈니스에 가까운 용어로 명명
 // repository는 조금 단순하게 개발적으로 명명
+
+@Service    // @service 어노테이션을 붙이지 않으면 그냥 java파일로 spring은 이 파일을 모름 (Autowired를 쓸수 없다)
 public class MemberService {
 
     // private final MemberRepository memeberRepository = new MemoryMemberRepository();
     private final MemberRepository memeberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memeberRepository) {
         this.memeberRepository = memeberRepository;
     };
