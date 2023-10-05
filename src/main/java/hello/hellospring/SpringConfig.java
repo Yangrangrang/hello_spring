@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.repository.JdbcTemplateMemberRepository;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.JdbcMemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
@@ -27,7 +28,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
     // 자바코드로 직접 스프링빈을 등록하는 방법
