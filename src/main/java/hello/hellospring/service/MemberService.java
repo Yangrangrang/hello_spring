@@ -5,6 +5,7 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import java.util.Optional;
 // service의 네이밍은 비즈니스에 가까운 용어로 명명
 // repository는 조금 단순하게 개발적으로 명명
 
+@Transactional  // JPA를 쓰려면 주의! 항상 트랜잭션이 있어야함. 서비스계층에 트랜잭션 데이터를 저장하고 변경할 때
 public class MemberService {
 
     // private final MemberRepository memeberRepository = new MemoryMemberRepository();
